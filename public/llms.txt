@@ -24,6 +24,38 @@ https://example.com/contact
 https://example.com/gallery
 הצצה למטבח של וונג - מסעדה אסייתית בריאה בישראל. צפו במנות המובחרות, בעיצוב המודרני ובאווירה הייחודית שלנו.
 
+### Products
+https://example.com/products
+המוצרים שלנו - וונג
+
+### Cart
+https://example.com/cart
+עגלת הקניות שלך
+
+### Checkout
+https://example.com/checkout
+תשלום
+
+### Login
+https://example.com/login
+התחברות לקוחות
+
+### Account
+https://example.com/account
+החשבון שלי
+
+### Order Success
+https://example.com/order-success
+תודה על ההזמנה
+
+### Product Detail
+https://example.com/product/:slug
+פרטי המוצר - וונג
+
+### Category
+https://example.com/category/:slug
+מוצרים - וונג
+
 ## Legal & Policy
 
 ### Privacy Policy

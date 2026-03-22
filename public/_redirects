@@ -1,5 +1,5 @@
 # Clean URL redirects for Render static hosting
-# Generated: 2026-03-17T10:23:32.710Z
+# Generated: 2026-03-22T06:27:14.368Z
 # NOTE: Render uses render.yaml for routing, not _redirects (that is Netlify)
 # This file is kept for reference only
 
@@ -7,6 +7,13 @@
 /about  /about.html  200!
 /contact  /contact.html  200!
 /gallery  /gallery.html  200!
+/products  /products.html  200!
+/cart  /cart.html  200!
+/checkout  /checkout.html  200!
+/login  /login.html  200!
+/account  /account.html  200!
+/order-success  /order-success.html  200!
+/return-policy  /return-policy.html  200!
 
 # Legal pages - redirect old .html URLs to friendly URLs
 /privacy.html  /privacy  301
@@ -15,5 +22,6 @@
 
 /  /index.html  200!
 
-# SPA fallback - serve index.html for all unmatched routes
-/*  /index.html  200
+# Dynamic routes - serve dedicated HTML templates for dynamic paths
+/product/*  /product.html  200!
+/category/*  /category.html  200!
