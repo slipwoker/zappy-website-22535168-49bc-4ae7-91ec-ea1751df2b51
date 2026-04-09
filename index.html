@@ -290,8 +290,8 @@
       .sub-menu a:hover { background-color: #f5f5f5; }
       /* RTL (Hebrew/Arabic) dropdown positioning */
       [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
       /* Desktop: show submenu on Menu Group hover */
       li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
       /* Menu Group title styling */
@@ -300,7 +300,7 @@
       /* ========== MOBILE SUBMENU STYLES ========== */
       @media (max-width: 768px) {
         .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        .sub-menu.mobile-expanded { max-height: 60vh !important; overflow-y: auto !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
         [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
         /* Disable hover behavior on mobile */
         .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -450,8 +450,8 @@
     <div class="container">
       <div class="intro-content">
         <h2>ברוכים הבאים לוונג - מסעדה תאילנדית יפנית מומלצת</h2>
-        <p style="">וונג היא יותר ממסעדה - זו חוויה קולינרית אסייתית ייחודית המשלבת מסורת עתיקה עם חדשנות מודרנית. אנחנו מתמחים במנות אסייאתיות אותנטיות מתאילנד, יפן, וייטנאם וסין, תוך שימוש בחומרי גלם טריים ובריאים ביותר. המטבח שלנו מציע אפשרויות צמחוניות וטבעוניות רבות, ומתאים במיוחד לסועדים מודעים לבריאות המחפשים אוכל אסייתי משובח לאירועים עסקיים או לארוחה משפחתית נעימה. שלום שלום</p>
-        <p style="">בוונג, אנחנו מאמינים שאוכל טוב הוא לא רק על טעם - זה על חוויה שלמה. הצוות המקצועי שלנו דואג לכל פרט, מהרגע שאתם נכנסים דרך הדלת ועד הביס האחרון. המסעדה שלנו מציעה אווירה נעימה ומזמינה, מושלמת לארוחות צהריים עסקיות, ערבי דייטים רומנטיים, או חגיגות משפחתיות.</p>
+        <p >וונג היא יותר ממסעדה - זו חוויה קולינרית אסייתית ייחודית המשלבת מסורת עתיקה עם חדשנות מודרנית. אנחנו מתמחים במנות אסייאתיות אותנטיות מתאילנד, יפן, וייטנאם וסין, תוך שימוש בחומרי גלם טריים ובריאים ביותר. המטבח שלנו מציע אפשרויות צמחוניות וטבעוניות רבות, ומתאים במיוחד לסועדים מודעים לבריאות המחפשים אוכל אסייתי משובח לאירועים עסקיים או לארוחה משפחתית נעימה. שלום שלום</p>
+        <p >בוונג, אנחנו מאמינים שאוכל טוב הוא לא רק על טעם - זה על חוויה שלמה. הצוות המקצועי שלנו דואג לכל פרט, מהרגע שאתם נכנסים דרך הדלת ועד הביס האחרון. המסעדה שלנו מציעה אווירה נעימה ומזמינה, מושלמת לארוחות צהריים עסקיות, ערבי דייטים רומנטיים, או חגיגות משפחתיות.</p>
       </div>
     <div class="zappy-inserted-element" id="zappy-element-1772551489187-8iipvk28a" data-element-id="zappy-element-1772551489187-8iipvk28a" data-element-type="button" data-zappy-newly-inserted="true" style="text-align: center; margin: 20px auto 0px; max-width: 800px !important; padding: 24px 48px; font-size: 1.4rem"><a href="/contact" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; width: auto !important; flex: 0 0 auto !important; background-color: var(--primary-color, var(--primary, #8B0000)); border: 2px solid var(--primary-color, var(--primary, #8B0000)); color: #ffffff;" data-element-type="button" data-text-color="auto" data-element-id="zappy-element-1772551489187-8iipvk28a" id="zappy-element-1772551489187-8iipvk28a">צרו קשר</a></div></div>
   </section>
@@ -466,7 +466,7 @@
   </style>
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
     <h2 style="font-size: 32px; font-weight: 700; color: #FFFFFF; margin-bottom: 40px; text-align: center; font-family: system-ui, -apple-system, sans-serif;">כותרת שלך כאן</h2>
-    <div class="faq-grid" style="display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 800px; margin: 0 auto;">
+    <div class="faq-grid" style="--zappy-grid-cols: 1fr; display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 800px; margin: 0 auto;" data-zappy-explicit-columns="true">
       <details open="" style="border: 1px solid #00000030; border-radius: 8px; overflow: hidden;">
         <summary style="display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; background: #00000008; font-size: 18px; font-weight: 600; color: #FFFFFF; font-family: system-ui, -apple-system, sans-serif;">
           <span>השאלה שלך כאן 1</span>
@@ -831,7 +831,7 @@
 
   <section class="values-section" id="zappy-section-2" style="transition: outline 0.15s;">
     <div class="container">
-      <div class="values-content zappy-preserve-css-grid" id="zappy-auto-grid-1772551513796-z2swbj" data-zappy-auto-grid="true" data-zappy-grid-align="center" data-original-item-width="654" data-original-gap="48px" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));" data-zappy-explicit-columns="true"><div class="value-text" id="zappy-drop-46spi01sr">
+      <div class="values-content zappy-preserve-css-grid" id="zappy-auto-grid-1772551513796-z2swbj" data-zappy-auto-grid="true" data-zappy-grid-align="center" data-original-item-width="654" data-original-gap="48px" style="--zappy-grid-cols: repeat(2, minmax(0, 1fr)); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));" data-zappy-explicit-columns="true"><div class="value-text" id="zappy-drop-46spi01sr">
           <h2 class="" id="zappy-drop-wtm3rbyqt">למה לבחור בוונג?</h2>
           <div class="value-item" id="zappy-drop-chpyvjy7g">
             <i class="fas fa-leaf value-icon" data-element-type="icon" data-element-id="icon-1772551513778-k9sgbwswh" data-icon-type="fontawesome" style="pointer-events: auto; cursor: pointer;"></i>
@@ -855,14 +855,14 @@
             </div>
           </div>
         </div><div class="value-image" id="zappy-drop-5f6w0n9sf">
-          <img data-placeholder="service-7" data-context="Professional Asian chef preparing fresh ingredients in modern restaurant kitchen, focusing on knife skills and food preparation" src="/assets/service-service-7.webp" alt="שף מקצועי במטבח וונג" class="value-img zappy-editable-image" data-element-type="image" data-element-id="img-1772551513780-8tnr0d3nm" data-original-position="static" style="position: relative;">
+          <img data-placeholder="service-7" data-context="Professional Asian chef preparing fresh ingredients in modern restaurant kitchen, focusing on knife skills and food preparation" src="/assets/service-service-7.webp" alt="שף מקצועי במטבח וונג" class="value-img" data-element-type="image" data-element-id="img-1772551513780-8tnr0d3nm" >
         </div></div><div class="zappy-inserted-element" id="zappy-element-1772552439873-nm9qoc2ln" data-element-id="zappy-element-1772552439873-nm9qoc2ln" data-element-type="button" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center; display: flex; justify-content: center; align-items: flex-start; max-width: 1356.8px !important; width: 100% !important; align-self: start !important; height: auto !important;"><a href="#" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; border-color: var(--primary-color, var(--primary, #8B0000)) !important; border-style: solid; border-width: 2px; border-image: initial; color: rgb(255, 255, 255) !important; width: auto !important; flex: 0 0 auto !important; cursor: pointer !important; background-color: var(--primary-color, var(--primary, #8B0000)) !important; background-image: none !important;" data-element-type="button" data-text-color="auto" data-element-id="zappy-element-1772552439873-nm9qoc2ln" id="zappy-element-1772552439873-nm9qoc2ln">לחץ כאן</a></div>
     </div>
   </section>
 
 <section id="layout-1772791681867" class="layout-section" data-zappy-component="true" style="width: 100%; padding: 60px 0px; direction: rtl;" data-component-id="empty-section">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-    <div class="zappy-inserted-element" id="zappy-element-1772791688716-t01v2kj8i" data-element-id="zappy-element-1772791688716-t01v2kj8i" data-element-type="h2" data-zappy-newly-inserted="true" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 1152px !important;"><h2 class="font-bold" data-element-type="h2" data-element-id="zappy-element-1772791688716-t01v2kj8i" id="zappy-element-1772791688716-t01v2kj8i" data-zappy-newly-inserted="true">כותרת חדשה</h2></div><div class="zappy-inserted-element" id="zappy-element-1772791694249-2fcwn40qw" data-element-id="zappy-element-1772791694249-2fcwn40qw" data-element-type="paragraph" data-zappy-newly-inserted="true" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 1152px !important;"><p style="font-size: 1rem; max-width: 100%; margin-left: auto; margin-right: auto;" data-element-type="paragraph" data-element-id="zappy-element-1772791694249-2fcwn40qw" id="zappy-element-1772791694249-2fcwn40qw" data-zappy-newly-inserted="true">הזן את טקסט הפסקה שלך...</p></div><div class="zappy-inserted-element" id="zappy-element-1772791784789-nj8spjrkw" data-element-id="zappy-element-1772791784789-nj8spjrkw" data-element-type="image" data-zappy-newly-inserted="true" style="margin: 20px auto; max-width: 1152px !important;"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFOEU4RTgiLz48cmVjdCB4PSIzMCIgeT0iMTUiIHdpZHRoPSIyNjAiIGhlaWdodD0iMTUwIiByeD0iNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOUU5RTlFIiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjUwIiByPSIxNSIgZmlsbD0iIzlFOUU5RSIvPjxwYXRoIGQ9Ik03NSAxMDAgTDEwNSA3MCBMMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDQ1IDE1MCBMNDUgMTE1IFoiIGZpbGw9IiNCMEIwQjAiLz48cGF0aCBkPSJNMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDEzNSAxNTAgWiIgZmlsbD0iIzlFOUU5RSIvPjwvc3ZnPg==" alt="Image" style="width: 320px; height: 180px; border-radius: 8px; max-width: 100%; object-fit: cover; margin-top: 20px; margin-right: auto !important; margin-bottom: 20px; margin-left: auto !important; position: relative; object-position: 50% 50%; display: block;" data-element-type="image" data-element-id="zappy-element-1772791784789-nj8spjrkw" id="zappy-element-1772791784789-nj8spjrkw" class="zappy-editable-image" data-original-position="static"></div><div class="zappy-inserted-element" id="zappy-element-1772791697584-h5cqvt92x" data-element-id="zappy-element-1772791697584-h5cqvt92x" data-element-type="image" data-zappy-newly-inserted="true" style="margin: 20px auto; max-width: 1152px !important;"><div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1772791697584-h5cqvt92x" data-element-type="image" data-zappy-zoom-wrapper-width="320px" data-zappy-zoom-wrapper-height="180px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 320px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 180px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFOEU4RTgiLz48cmVjdCB4PSIzMCIgeT0iMTUiIHdpZHRoPSIyNjAiIGhlaWdodD0iMTUwIiByeD0iNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOUU5RTlFIiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjUwIiByPSIxNSIgZmlsbD0iIzlFOUU5RSIvPjxwYXRoIGQ9Ik03NSAxMDAgTDEwNSA3MCBMMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDQ1IDE1MCBMNDUgMTE1IFoiIGZpbGw9IiNCMEIwQjAiLz48cGF0aCBkPSJNMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDEzNSAxNTAgWiIgZmlsbD0iIzlFOUU5RSIvPjwvc3ZnPg==" alt="Image" style="width: 100% !important; height: 100% !important; border-radius: 8px; max-width: none !important; object-fit: cover !important; margin: 0px !important; position: absolute !important; object-position: 50% 50%; display: block !important; left: 0% !important; top: 0% !important; max-height: none !important;" data-element-type="image" data-element-id="zappy-element-1772791697584-h5cqvt92x" id="zappy-element-1772791697584-h5cqvt92x" class="zappy-editable-image" data-original-position="static" data-zappy-zoom="1"></div></div><p style="font-size: 16px; line-height: 1.7; color: rgb(255, 255, 255); opacity: 0.5; text-align: center; font-family: system-ui, -apple-system, sans-serif;">הוסף את תוכן הטקסט שלך כאן. זהו טקסט ממלא מקום שניתן לערוך.</p>
+    <div class="zappy-inserted-element" id="zappy-element-1772791688716-t01v2kj8i" data-element-id="zappy-element-1772791688716-t01v2kj8i" data-element-type="h2" data-zappy-newly-inserted="true" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 1152px !important;"><h2 class="font-bold" data-element-type="h2" data-element-id="zappy-element-1772791688716-t01v2kj8i" id="zappy-element-1772791688716-t01v2kj8i" data-zappy-newly-inserted="true">כותרת חדשה</h2></div><div class="zappy-inserted-element" id="zappy-element-1772791694249-2fcwn40qw" data-element-id="zappy-element-1772791694249-2fcwn40qw" data-element-type="paragraph" data-zappy-newly-inserted="true" style="margin-left: auto; margin-right: auto; width: 100%; max-width: 1152px !important;"><p style="font-size: 1rem; max-width: 100%; margin-left: auto; margin-right: auto;" data-element-type="paragraph" data-element-id="zappy-element-1772791694249-2fcwn40qw" id="zappy-element-1772791694249-2fcwn40qw" data-zappy-newly-inserted="true">הזן את טקסט הפסקה שלך...</p></div><div class="zappy-inserted-element" id="zappy-element-1772791784789-nj8spjrkw" data-element-id="zappy-element-1772791784789-nj8spjrkw" data-element-type="image" data-zappy-newly-inserted="true" style="margin: 20px auto; max-width: 1152px !important;"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFOEU4RTgiLz48cmVjdCB4PSIzMCIgeT0iMTUiIHdpZHRoPSIyNjAiIGhlaWdodD0iMTUwIiByeD0iNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOUU5RTlFIiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjUwIiByPSIxNSIgZmlsbD0iIzlFOUU5RSIvPjxwYXRoIGQ9Ik03NSAxMDAgTDEwNSA3MCBMMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDQ1IDE1MCBMNDUgMTE1IFoiIGZpbGw9IiNCMEIwQjAiLz48cGF0aCBkPSJNMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDEzNSAxNTAgWiIgZmlsbD0iIzlFOUU5RSIvPjwvc3ZnPg==" alt="Image" style="width: 320px; height: 180px; border-radius: 8px; max-width: 100%; object-fit: cover; margin-top: 20px; margin-right: auto !important; margin-bottom: 20px; margin-left: auto !important; object-position: 50% 50%; display: block;" data-element-type="image" data-element-id="zappy-element-1772791784789-nj8spjrkw" id="zappy-element-1772791784789-nj8spjrkw" class="zappy-editable-image"></div><div class="zappy-inserted-element" id="zappy-element-1772791697584-h5cqvt92x" data-element-id="zappy-element-1772791697584-h5cqvt92x" data-element-type="image" data-zappy-newly-inserted="true" style="margin: 20px auto; max-width: 1152px !important;"><div data-zappy-zoom-wrapper="true" data-element-id="zappy-element-1772791697584-h5cqvt92x" data-element-type="image" data-zappy-zoom-wrapper-width="320px" data-zappy-zoom-wrapper-height="180px" data-zappy-zoom-wrapper-width-mode="px" style="position: relative !important; overflow: hidden !important; width: 320px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; height: 180px !important; display: block !important;" data-zappy-zoom-clip="true" data-zappy-wrapper-margins-applied="true"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjMyMCIgaGVpZ2h0PSIxODAiIGZpbGw9IiNFOEU4RTgiLz48cmVjdCB4PSIzMCIgeT0iMTUiIHdpZHRoPSIyNjAiIGhlaWdodD0iMTUwIiByeD0iNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOUU5RTlFIiBzdHJva2Utd2lkdGg9IjQiLz48Y2lyY2xlIGN4PSI3NSIgY3k9IjUwIiByPSIxNSIgZmlsbD0iIzlFOUU5RSIvPjxwYXRoIGQ9Ik03NSAxMDAgTDEwNSA3MCBMMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDQ1IDE1MCBMNDUgMTE1IFoiIGZpbGw9IiNCMEIwQjAiLz48cGF0aCBkPSJNMTM1IDkwIEwxNTAgNzUgTDE4MCA5MCBMMjI1IDUwIEwyNzUgODAgTDI3NSAxNTAgTDEzNSAxNTAgWiIgZmlsbD0iIzlFOUU5RSIvPjwvc3ZnPg==" alt="Image" style="width: 100% !important; height: 100% !important; border-radius: 8px; max-width: none !important; object-fit: cover !important; margin: 0px !important; position: absolute !important; object-position: 50% 50%; display: block !important; left: 0% !important; top: 0% !important; max-height: none !important;" data-element-type="image" data-element-id="zappy-element-1772791697584-h5cqvt92x" id="zappy-element-1772791697584-h5cqvt92x" class="zappy-editable-image" data-zappy-zoom="1"></div></div><p style="font-size: 16px; line-height: 1.7; color: rgb(255, 255, 255); opacity: 0.5; text-align: center; font-family: system-ui, -apple-system, sans-serif;">הוסף את תוכן הטקסט שלך כאן. זהו טקסט ממלא מקום שניתן לערוך.</p>
   <div class="zappy-inserted-element" id="zappy-element-1772791713122-kp3bdmu4m" data-element-id="zappy-element-1772791713122-kp3bdmu4m" data-element-type="button" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center; display: flex; justify-content: center; align-items: flex-start; max-width: 1152px !important; width: 100% !important; align-self: start !important; height: auto !important;"><a href="#" class="btn btn-primary" style="text-decoration: none; padding: 12px 24px; border-radius: 6px; display: inline-block; border-color: var(--primary-color, var(--primary, #8B0000)) !important; border-style: solid; border-width: 2px; border-image: initial; color: rgb(255, 255, 255) !important; width: auto !important; flex: 0 0 auto !important; cursor: pointer !important; background-color: var(--primary-color, var(--primary, #8B0000)) !important; background-image: none !important;" data-element-type="button" data-text-color="auto" data-element-id="zappy-element-1772791713122-kp3bdmu4m" id="zappy-element-1772791713122-kp3bdmu4m">לחץ כאן</a></div><div class="zappy-inserted-element" id="zappy-element-1772791716881-dy54kdt0p" data-element-id="zappy-element-1772791716881-dy54kdt0p" data-element-type="icon" data-zappy-newly-inserted="true" style="margin: 20px auto; text-align: center; display: flex !important; justify-content: center !important; max-width: 1152px !important; width: 100% !important; color: rgb(77, 235, 45);"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="64" height="64" viewbox="0 0 24 24" data-icon="ic:baseline-facebook" data-iconify="ic:baseline-facebook" data-element-type="icon" data-icon-type="iconify" data-size-adjusted="true" style="display: inline-block; vertical-align: -0.125em; color: rgb(77, 235, 45); width: 64px !important; height: 64px !important;" class="iconify iconify--ic"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"></path></svg></div></div>
 </section>
 
@@ -1287,29 +1287,116 @@
 
     <script>
     (function(){
-      if(window.innerWidth>768)return;
-      function fixZW(){
+      var _applied=false;
+      function _isHeroBg(w){var img=w.querySelector('img');if(img&&(img.getAttribute('data-hero-bg')==='true'||img.getAttribute('data-hero-background')==='true'))return true;var p=(w.style.position||'').replace(/\s*!important\s*/g,'').trim();var ww=(w.style.width||'').replace(/\s*!important\s*/g,'').trim();var hh=(w.style.height||'').replace(/\s*!important\s*/g,'').trim();return p==='absolute'&&ww==='100%'&&hh==='100%';}
+      function fixDesktopWrappers(){
+        // No-op: desktop wrapper restoration is handled by ZAPPY_PUBLISHED_ZOOM_WRAPPER_RUNTIME
+        // in script.js (restoreWrapperDimensions). The old inflation logic here was expanding
+        // small wrappers (e.g. 139px logo wrappers) to their parent width, conflicting with
+        // the correct stored dimensions.
+      }
+      function applyMobile(){
+        if(_applied)return;_applied=true;
         document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
           var cw=w.style.getPropertyValue('width');
           if(!cw||cw==='100%')return;
-          w.style.setProperty('width','100%','important');
-          w.style.setProperty('max-width','100%','important');
-          w.style.setProperty('height','auto','important');
+          if(!w._zappyDesktop)w._zappyDesktop={wStyle:w.getAttribute('style')};
           var img=w.querySelector('img');
-          if(img){
+          if(!img)return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var parentOvf=w.parentElement?((w.parentElement.style.overflow||'')+(window.getComputedStyle(w.parentElement).overflow||'')).trim():'';
+          var inConstrainedParent=parentOvf.indexOf('hidden')!==-1||parentOvf.indexOf('clip')!==-1;
+          if(inConstrainedParent){
+            w.style.setProperty('max-width','100%','important');
+          }else{
+            w.style.setProperty('width','100%','important');
+            w.style.setProperty('max-width','100%','important');
+          }
+          if(mobileSrc)img.src=mobileSrc;
+          var pos=mobilePos||img.style.getPropertyValue('object-position')||'50% 50%';
+          if(mobileZoom>1){
+            var wH=w.getAttribute('data-zappy-zoom-wrapper-height');
+            w.style.setProperty('height',wH||'200px','important');
+            img.style.setProperty('position','relative','important');
+            img.style.setProperty('width','100%','important');
+            img.style.setProperty('height','auto','important');
+            img.style.setProperty('min-height','100%','important');
+            img.style.setProperty('max-width','none','important');
+            img.style.setProperty('max-height','none','important');
+            img.style.setProperty('object-fit','cover','important');
+            img.style.setProperty('left','0','important');
+            img.style.setProperty('top','0','important');
+            img.style.setProperty('object-position',pos,'important');
+            img.style.setProperty('transform','scale('+mobileZoom+')','important');
+            img.style.setProperty('transform-origin',pos,'important');
+          }else{
+            if(!inConstrainedParent)w.style.setProperty('height','auto','important');
             img.style.setProperty('position','relative','important');
             img.style.setProperty('width','100%','important');
             img.style.setProperty('height','auto','important');
             img.style.setProperty('max-width','100%','important');
-            img.style.setProperty('max-height','400px','important');
+            img.style.setProperty('max-height',inConstrainedParent?'none':'400px','important');
             img.style.setProperty('object-fit','cover','important');
             img.style.setProperty('left','0','important');
             img.style.setProperty('top','0','important');
+            img.style.setProperty('transform','none','important');
+            if(mobilePos)img.style.setProperty('object-position',pos,'important');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};
+          var mobileSrc=img.getAttribute('data-zappy-mobile-src');
+          var mobilePos=img.getAttribute('data-zappy-mobile-object-position');
+          var mobileZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));
+          if(mobileSrc)img.src=mobileSrc;
+          if(mobilePos)img.style.setProperty('object-position',mobilePos,'important');
+          if(mobileZoom>1){
+            img.style.setProperty('transform','scale('+mobileZoom+')','important');
+            img.style.setProperty('transform-origin',mobilePos||'50% 50%','important');
+            var p=img.parentElement;
+            if(p)p.style.setProperty('overflow','hidden','important');
           }
         });
       }
-      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fixZW);
-      else setTimeout(fixZW,50);
+      function revertDesktop(){
+        if(!_applied)return;_applied=false;
+        document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){
+          if(w._zappyDesktop&&w._zappyDesktop.wStyle!=null){w.setAttribute('style',w._zappyDesktop.wStyle);}
+          var img=w.querySelector('img');
+          if(img&&img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        document.querySelectorAll('img[data-zappy-mobile-src],img[data-zappy-mobile-object-position],img[data-zappy-mobile-zoom]').forEach(function(img){
+          var zw=img.closest('[data-zappy-zoom-wrapper="true"]');
+          if(zw&&!_isHeroBg(zw))return;
+          if(img._zappyDesktop){
+            if(img._zappyDesktop.src!=null)img.setAttribute('src',img._zappyDesktop.src);
+            if(img._zappyDesktop.style!=null)img.setAttribute('style',img._zappyDesktop.style);
+            else img.removeAttribute('style');
+          }
+        });
+        _fixHeroBgWrappers();
+        fixDesktopWrappers();
+      }
+      function _fixHeroBgWrappers(){var isMob=window.innerWidth<=768;document.querySelectorAll('[data-zappy-zoom-wrapper="true"]').forEach(function(w){if(!_isHeroBg(w))return;w.style.setProperty('position','absolute','important');w.style.setProperty('top','0','important');w.style.setProperty('left','0','important');w.style.setProperty('width','100%','important');w.style.setProperty('height','100%','important');w.style.setProperty('max-width','none','important');w.style.setProperty('overflow','hidden','important');w.setAttribute('data-zappy-zoom-wrapper-width-mode','full');var img=w.querySelector('img');if(img){img.style.setProperty('width','100%','important');img.style.setProperty('height','100%','important');img.style.setProperty('object-fit','cover','important');img.style.setProperty('position','relative','important');img.style.setProperty('top','0','important');img.style.setProperty('left','0','important');img.style.setProperty('max-width','none','important');img.style.setProperty('max-height','none','important');img.style.setProperty('display','block','important');if(isMob){var mSrc=img.getAttribute('data-zappy-mobile-src');var mPos=img.getAttribute('data-zappy-mobile-object-position');var mZoom=parseFloat(img.getAttribute('data-zappy-mobile-zoom'));if(mSrc){if(!img._zappyDesktop)img._zappyDesktop={src:img.getAttribute('src'),style:img.getAttribute('style')};img.src=mSrc;}if(mPos)img.style.setProperty('object-position',mPos,'important');if(mZoom>1){img.style.setProperty('transform','scale('+mZoom+')','important');img.style.setProperty('transform-origin',mPos||'50% 50%','important');}}}});}
+      function init(){
+        _fixHeroBgWrappers();
+        var mq=window.matchMedia('(max-width:768px)');
+        function onChange(e){if(e.matches)applyMobile();else revertDesktop();}
+        if(mq.matches)applyMobile();
+        else fixDesktopWrappers();
+        try{mq.addEventListener('change',onChange);}catch(e){mq.addListener(onChange);}
+      }
+      if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+      else setTimeout(init,50);
     })();
     </script>
 </body>

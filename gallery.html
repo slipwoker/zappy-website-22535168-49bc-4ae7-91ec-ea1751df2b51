@@ -388,8 +388,8 @@ img[data-no-hero-position] { position: static !important; }
       .sub-menu a:hover { background-color: #f5f5f5; }
       /* RTL (Hebrew/Arabic) dropdown positioning */
       [dir="rtl"] .nav-menu .sub-menu, [dir="rtl"] nav .sub-menu, [dir="rtl"] .navbar .sub-menu, html[lang="he"] .nav-menu .sub-menu, html[lang="he"] nav .sub-menu, html[lang="he"] .navbar .sub-menu, html[lang="ar"] .nav-menu .sub-menu, html[lang="ar"] nav .sub-menu, html[lang="ar"] .navbar .sub-menu { left: auto !important; right: 0 !important; }
-      /* Hide empty dropdown menus */
-      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))), .sub-menu:not(:has(li)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
+      /* Hide empty dropdown menus (exclude catalog sub-menus that use <a> children instead of <li>) */
+      .sub-menu:empty, .sub-menu:not(:has(li:not(.zappy-hidden-menu-item))):not(:has(> a)), .sub-menu:not(:has(li)):not(:has(> a)) { display: none !important; opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; }
       /* Desktop: show submenu on Menu Group hover */
       li:has(.menu-group-title):hover > .sub-menu { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; pointer-events: auto !important; }
       /* Menu Group title styling */
@@ -398,7 +398,7 @@ img[data-no-hero-position] { position: static !important; }
       /* ========== MOBILE SUBMENU STYLES ========== */
       @media (max-width: 768px) {
         .nav-menu .sub-menu, nav .sub-menu, .navbar .sub-menu, #navMenu .sub-menu { position: static !important; transform: none !important; box-shadow: none !important; background: transparent !important; max-height: 0; overflow: hidden; opacity: 0; visibility: hidden; transition: max-height 0.3s ease, opacity 0.3s ease; padding: 0 !important; border-radius: 0 !important; }
-        .sub-menu.mobile-expanded { max-height: 500px !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
+        .sub-menu.mobile-expanded { max-height: 60vh !important; overflow-y: auto !important; opacity: 1 !important; visibility: visible !important; padding: 8px 0 8px 16px !important; }
         [dir="rtl"] .sub-menu.mobile-expanded, html[lang="he"] .sub-menu.mobile-expanded { padding: 8px 16px 8px 0 !important; }
         /* Disable hover behavior on mobile */
         .nav-menu li:hover > .sub-menu, nav li:hover > .sub-menu, .navbar li:hover > .sub-menu, #navMenu li:hover > .sub-menu { opacity: 0; visibility: hidden; pointer-events: none; }
@@ -523,12 +523,12 @@ img[data-no-hero-position] { position: static !important; }
   <section class="section gallery-section" id="photo-gallery" style="background-color: #ffffff !important; padding: 60px 0;" data-zappy-section="true">
     <div class="container">
       <!-- Using inline grid styles to ensure layout robustness while keeping class names for base CSS hooks -->
-      <div class="portfolio-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;">
+      <div class="portfolio-grid" style="--zappy-grid-cols: repeat(auto-fill, minmax(300px, 1fr)); display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px;" data-zappy-explicit-columns="true">
         
         <!-- Card 1 -->
         <article class="card" style="background-color: #ffffff !important; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid #eef2f6;">
           <div style="position: relative;">
-            <img data-placeholder="gallery-pad-thai" data-context="Authentic Pad Thai dish with fresh bean sprouts, lime, crushed peanuts, and shrimp, served on a beautiful ceramic plate in a restaurant setting" data-zappy-editable-image="true" src="/assets/page-gallery-pad-thai-1770893320770.webp" alt="פד תאי קלאסי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
+            <img data-placeholder="gallery-pad-thai" data-context="Authentic Pad Thai dish with fresh bean sprouts, lime, crushed peanuts, and shrimp, served on a beautiful ceramic plate in a restaurant setting" src="/assets/page-gallery-pad-thai-1770893320770.webp" alt="פד תאי קלאסי" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
           </div>
           <div style="padding: 24px;">
             <h3 style="color: #405050 !important; margin-top: 0; margin-bottom: 10px; font-size: 1.4rem;">פד תאי קלאסי</h3>
@@ -539,7 +539,7 @@ img[data-no-hero-position] { position: static !important; }
         <!-- Card 2 -->
         <article class="card" style="background-color: #ffffff !important; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid #eef2f6;">
           <div style="position: relative;">
-            <img data-placeholder="gallery-sushi" data-context="Premium sushi platter with salmon, tuna, and avocado rolls, arranged artistically on a wooden board with chopsticks" data-zappy-editable-image="true" src="/assets/page-gallery-sushi-1770893318493.webp" alt="מגש סושי פרימיום" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
+            <img data-placeholder="gallery-sushi" data-context="Premium sushi platter with salmon, tuna, and avocado rolls, arranged artistically on a wooden board with chopsticks" src="/assets/page-gallery-sushi-1770893318493.webp" alt="מגש סושי פרימיום" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
           </div>
           <div style="padding: 24px;">
             <h3 style="color: #405050 !important; margin-top: 0; margin-bottom: 10px; font-size: 1.4rem;">סושי פרימיום</h3>
@@ -550,7 +550,7 @@ img[data-no-hero-position] { position: static !important; }
         <!-- Card 3 -->
         <article class="card" style="background-color: #ffffff !important; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid #eef2f6;">
           <div style="position: relative;">
-            <img data-placeholder="gallery-curry" data-context="Rich green thai curry bowl with coconut milk, basil, green vegetables and tofu, steaming hot" data-zappy-editable-image="true" src="/assets/page-gallery-curry-1770893384102.webp" alt="קארי ירוק עשיר" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
+            <img data-placeholder="gallery-curry" data-context="Rich green thai curry bowl with coconut milk, basil, green vegetables and tofu, steaming hot" src="/assets/page-gallery-curry-1770893384102.webp" alt="קארי ירוק עשיר" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
           </div>
           <div style="padding: 24px;">
             <h3 style="color: #405050 !important; margin-top: 0; margin-bottom: 10px; font-size: 1.4rem;">קארי ירוק</h3>
@@ -561,7 +561,7 @@ img[data-no-hero-position] { position: static !important; }
         <!-- Card 4 -->
         <article class="card" style="background-color: #ffffff !important; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid #eef2f6;">
           <div style="position: relative;">
-            <img data-placeholder="gallery-interior" data-context="Modern asian restaurant interior design, warm lighting, wooden furniture, clean and minimalist atmosphere" data-zappy-editable-image="true" src="/assets/page-gallery-interior-1770893402391.webp" alt="עיצוב ואווירה" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
+            <img data-placeholder="gallery-interior" data-context="Modern asian restaurant interior design, warm lighting, wooden furniture, clean and minimalist atmosphere" src="/assets/page-gallery-interior-1770893402391.webp" alt="עיצוב ואווירה" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
           </div>
           <div style="padding: 24px;">
             <h3 style="color: #405050 !important; margin-top: 0; margin-bottom: 10px; font-size: 1.4rem;">עיצוב ואווירה</h3>
@@ -572,7 +572,7 @@ img[data-no-hero-position] { position: static !important; }
         <!-- Card 5 -->
         <article class="card" style="background-color: #ffffff !important; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid #eef2f6;">
           <div style="position: relative;">
-            <img data-placeholder="gallery-dimsum" data-context="Bamboo steamer basket with colorful handmade dim sum dumplings" data-zappy-editable-image="true" src="/assets/page-gallery-dimsum-1770893404218.webp" alt="דים סאם בעבודת יד" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
+            <img data-placeholder="gallery-dimsum" data-context="Bamboo steamer basket with colorful handmade dim sum dumplings" src="/assets/page-gallery-dimsum-1770893404218.webp" alt="דים סאם בעבודת יד" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
           </div>
           <div style="padding: 24px;">
             <h3 style="color: #405050 !important; margin-top: 0; margin-bottom: 10px; font-size: 1.4rem;">דים סאם</h3>
@@ -583,7 +583,7 @@ img[data-no-hero-position] { position: static !important; }
         <!-- Card 6 -->
         <article class="card" style="background-color: #ffffff !important; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; border: 1px solid #eef2f6;">
           <div style="position: relative;">
-            <img data-placeholder="gallery-cocktails" data-context="Refreshing asian inspired cocktail with lychee and mint, elegant glass on bar counter" data-zappy-editable-image="true" src="/assets/page-gallery-cocktails-1770893400637.webp" alt="קוקטיילים מיוחדים" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
+            <img data-placeholder="gallery-cocktails" data-context="Refreshing asian inspired cocktail with lychee and mint, elegant glass on bar counter" src="/assets/page-gallery-cocktails-1770893400637.webp" alt="קוקטיילים מיוחדים" style="width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block;" data-no-hero-position="true" class="generated-image">
           </div>
           <div style="padding: 24px;">
             <h3 style="color: #405050 !important; margin-top: 0; margin-bottom: 10px; font-size: 1.4rem;">הבר שלנו</h3>
