@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+  <channel>
+    <title>וונג</title>
+    <link>https://example.com</link>
+    <description>Product feed for וונג</description>
+    <lastBuildDate>Tue, 02 Jun 2026 18:17:47 GMT</lastBuildDate>
+    <item>
+      <g:id>c6888713-beae-43cf-9d17-4de6c7698c25</g:id>
+      <g:title>טסט</g:title>
+      <g:description>שלום שלום</g:description>
+      <g:link>https://example.com/product/tst-o054gy</g:link>
+      <g:availability>in_stock</g:availability>
+      <g:price>300.00 USD</g:price>
+      <g:sale_price>199.00 USD</g:sale_price>
+      <g:condition>new</g:condition>
+      <g:brand>וונג</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+    </item>
+  </channel>
+</rss>

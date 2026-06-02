@@ -1,4 +1,6 @@
-# Business — Generative Engine Optimization Map
+# וונג — Generative Engine Optimization Map
+
+> A מסעדנות business.
 
 ---
 
@@ -72,12 +74,38 @@ Information about WCAG compliance and accessibility features.
 
 ---
 
-# Business Context (for LLM understanding)
+## Products
 
-## About Business
+**Total active products: 1**
+
+### טסט
+https://example.com/product/tst-o054gy
+- Price: 199.00 USD (sale, was 300.00 USD)
+- Availability: In stock
+- Description: שלום שלום
+
 ---
 
-# Additional Resources
+# Business Context (for LLM understanding)
 
-- **Sitemap**: https://example.com/sitemap.xml
-- **Robots.txt**: https://example.com/robots.txt
+## About וונג
+וונג is a business in the מסעדנות industry.
+
+## Target Audience
+- צעירים חובבי קולינריה
+- חובבי מטבח אסייתי
+- מקצוענים עסקיים
+- סועדים מודעים לבריאות
+
+## Industry
+מסעדנות
+
+---
+
+# Machine-readable feeds
+
+- Sitemap (XML): https://example.com/sitemap.xml
+- Robots: https://example.com/robots.txt
+- Flattened page text (for LLMs): https://example.com/llms-full.txt
+- Products (JSON): https://example.com/products.json
+- Products (Google Merchant RSS): https://example.com/product-feed.xml

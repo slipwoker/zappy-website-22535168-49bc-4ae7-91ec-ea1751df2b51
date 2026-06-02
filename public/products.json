@@ -1,0 +1,29 @@
+{
+  "@context": "https://schema.org",
+  "generated_at": "2026-06-02T18:17:47.481Z",
+  "base_url": "https://example.com",
+  "currency": "USD",
+  "count": 1,
+  "products": [
+    {
+      "id": "c6888713-beae-43cf-9d17-4de6c7698c25",
+      "slug": "tst-o054gy",
+      "name": "טסט",
+      "name_translations": {},
+      "description": "<p>שלום שלום</p>",
+      "short_description": null,
+      "sku": null,
+      "brand": null,
+      "price": 199,
+      "base_price": 300,
+      "sale_price": 199,
+      "currency": "USD",
+      "images": [],
+      "in_stock": true,
+      "stock_status": "in_stock",
+      "url": "https://example.com/product/tst-o054gy",
+      "categories": [],
+      "updated_at": "2026-03-06T10:14:29.889Z"
+    }
+  ]
+}
